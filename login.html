@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Halaman Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4caf50;
+      border: 0;
+      border-radius: 3px;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .error {
+      background-color: #f2dede;
+      border: 1px solid #ebccd1;
+      color: #a94442;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Halaman Login</h2>
+    <form id="loginForm">
+      <div id="errorDiv"></div>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Mencegah pengiriman form secara default
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+
+      // Validasi login
+      if (username === 'admin' && password === 'admin123') {
+        alert('Login berhasil!');
+        // Lakukan tindakan selanjutnya, seperti mengarahkan ke halaman berikutnya
+      } else {
+        var errorDiv = document.getElementById('errorDiv');
+        errorDiv.innerHTML = 'Username atau password salah.';
+      }
+    });
+  </script>
+</body>
+</html>

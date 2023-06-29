@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Kode Voucher Promo customin</title>
+</head>
+<body>
+  <h1>Kode Voucher promo customin</h1>
+  
+  <div>
+    <p>Kode Voucher:</p>
+    <p id="voucherCode"></p>
+  </div>
+  
+  <button onclick="generateNewCode()">Buat Kode Baru</button>
+
+  <script>
+    function generateNewCode() {
+      var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+      var length = 8;
+      var newCode = "";
+
+      // Generate random characters to create the voucher code
+      for (var i = 0; i < length; i++) {
+        var randomIndex = Math.floor(Math.random() * characters.length);
+        newCode += characters.charAt(randomIndex);
+      }
+
+      // Display the new voucher code
+      document.getElementById("voucherCode").textContent = newCode;
+    }
+  </script>
+</body>
+</html>
